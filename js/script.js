@@ -16,13 +16,15 @@ for (let i = 0; i <= k; i++) {
     let a = prompt('Yours last film?');
     let b = +prompt('Rating?');
     personalMoviesDB.movies[a] = b;
-    let another = confirm('another movie?');
-    if (another === true) {
+
+    if (confirm('another movie?')) {
         k++;
+    } else {
+        console.log(personalMoviesDB);
     }
 }
 
-console.log(personalMoviesDB);
+
 
 
 
