@@ -12,19 +12,31 @@ let personalMoviesDB = {
     privacy: false
 };
 
-for (let i = 0; i <= k; i++) {
+for (let i = 0; i < 2; i++) {
     let a = prompt('Yours last film?');
     let b = +prompt('Rating?');
-    personalMoviesDB.movies[a] = b;
 
-    if (confirm('another movie?')) {
-        k++;
+    if ((a && b) != null && (a && b) != '' && a.length < 50) {
+        console.log('done');
+        personalMoviesDB.movies[a] = b;
     } else {
-        console.log(personalMoviesDB);
+        console.log('error');
+        i--;
     }
+
+    console.log(personalMoviesDB);
+
 }
 
-
+if (personalMoviesDB.count <= 10) {
+    alert('slabak');
+} else if (personalMoviesDB.count <= 30) {
+    alert('norm');
+} else if (personalMoviesDB.count > 30) {
+    alert('krasava');
+} else {
+    alert('error');
+}
 
 
 
